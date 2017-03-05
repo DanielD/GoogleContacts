@@ -10,6 +10,26 @@ namespace GoogleContacts
 		public App()
 		{
 			InitializeComponent();
+
+			if (Device.OS == TargetPlatform.Android)
+			{
+				var formsPage = new NavigationPage(new ContactsPage
+				{
+					Title = "Contacts"
+				})
+				{
+					BarBackgroundColor = Color.FromHex("#8491F9"),
+					BarTextColor = Color.White
+				};
+
+				var navService = DependencyService.Get<INavService>() as NavService;
+				navService.Navigation = formsPage.Navigation;
+
+				navService.RegisterViewMapping(typeof(ContactsPageViewModel), typeof(ContactsPage));
+				navService.RegisterViewMapping(typeof(ContactPageViewModel), typeof(ContactPage));
+
+				MainPage = formsPage;
+			}
 		}
 
 		protected override void OnStart()

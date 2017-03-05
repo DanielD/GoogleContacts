@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+	<!-- OpenID Gray -->
+	<color name="colorPrimary">#aeafb3</color>
+	<color name="colorPrimaryDark">#7c7d80</color>
+	<!-- OpenID orange -->
+	<color name="colorAccent">#f38019</color>
+</resources>
